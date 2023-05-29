@@ -17,7 +17,7 @@ It will automatically send tf transforms between the objects detected and kinect
 
 # Installation
 ## step1 Install dependencies
-1. Remember to downgrade the gcc and g++ version of your system to 7 (my Ubuntu 20.04 is default 8)
+1. ~~Remember to downgrade the gcc and g++ version of your system to 7 (my Ubuntu 20.04 is default 8)~~
 2. install kinect drivers
 ```bash
 sudo apt install ros-melodic-openni-*
@@ -29,7 +29,7 @@ pip install python3-pcl
 
 4. ros_numpy (if you are using Ubuntu 18.04 with ROS Melodic, sudo apt-get install ros-melodic-ros-numpy)
 ```bash
-sudo apt-get install ros-noetic-ros-numpy
+sudo apt-get install ros-melodic-ros-numpy
 ```
 5. [darknet_ros](https://github.com/nypyp/darknet_ros.git) (This links to my forked repo. I modified it for supporting jeston nano)
 ## step2 Clone the dependencies packages
