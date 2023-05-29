@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Copyright (C) 2023  0nhc
 # 
 # This program is free software: you can redistribute it and/or modify
@@ -13,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.If not, see <https://www.gnu.org/licenses/>.       
 
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import rospy
 import pcl
 from darknet_ros_msgs.msg import BoundingBoxes
@@ -74,7 +75,7 @@ def depth_callback(data):
 def listener():
     rospy.init_node('depth_combination', anonymous=True)
     rospy.Subscriber("/darknet_ros/bounding_boxes", BoundingBoxes, darknet_callback)
-    rospy.Subscriber("/kinect2/qhd/points", PointCloud2, depth_callback)
+    rospy.Subscriber("/camera/rgb/points", PointCloud2, depth_callback)
     rospy.spin()
  
 if __name__ == '__main__':

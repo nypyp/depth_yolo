@@ -7,9 +7,9 @@
 &nbsp;
 
 # Description
-This is a package combining darknet_ros and iai_kinect2 in order to get the 3D location of the objects detected.
+This is a package combining darknet_ros and kinect1 in order to get the 3D location of the objects detected.
 
-It will automatically send tf transforms between the objects detected and kinect2_link.
+It will automatically send tf transforms between the objects detected and kinect.
 
 ![b](imgs/b.jpeg)
   
@@ -18,7 +18,10 @@ It will automatically send tf transforms between the objects detected and kinect
 # Installation
 ## step1 Install dependencies
 1. Remember to downgrade the gcc and g++ version of your system to 7 (my Ubuntu 20.04 is default 8)
-2. [libfreenect2](https://github.com/OpenKinect/libfreenect2.git) (follow the official steps to install libfreenect2)
+2. install kinect drivers
+```bash
+sudo apt install ros-melodic-openni-*
+```
 3. python3-pcl (if you are using Ubuntu 18.04 with ROS Melodic, pip install python-pcl)
 ```bash
 pip install python3-pcl
@@ -28,20 +31,18 @@ pip install python3-pcl
 ```bash
 sudo apt-get install ros-noetic-ros-numpy
 ```
-5. [darknet_ros](https://github.com/0nhc/darknet_ros) (This links to my forked repo. I modified it for supporting my RTX 30 laptop)
-6. [iai_kinect2](https://github.com/0nhc/iai_kinect2) (This links to my forked repo. I modified it for supporting Ubuntu 20.04)
+5. [darknet_ros](https://github.com/nypyp/darknet_ros.git) (This links to my forked repo. I modified it for supporting jeston nano)
 ## step2 Clone the dependencies packages
 If you haven't cloned the dependencies packages yet, clone them in your workspace first.
 
 ```bash
 cd <your_ws>/src
-git clone --recursive https://github.com/0nhc/darknet_ros.git
-git clone https://github.com/0nhc/iai_kinect2.git
+git clone --recursive https://github.com/nypyp/darknet_ros.git
 ```
 ## step3 install depth_yolo
 Then, you can continue installing depth_yolo
 ```bash
-git clone https://github.com/0nhc/depth_yolo.git
+git clone https://github.com/nypyp/depth_yolo.git
 cd ..
 catkin_make -DCMAKE_BUILD_TYPE=Release
 source devel/setup.bash

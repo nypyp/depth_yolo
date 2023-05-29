@@ -2,11 +2,11 @@
 
 <launch>
   <!-- Kinect V2 -->
-  <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch"/>
+  <include file="$(find openni_launch)/launch/openni.launch"/>
   
   <!-- Console launch prefix -->
   <arg name="launch_prefix" default=""/>
-  <arg name="image" default="/kinect2/qhd/image_color" />
+  <arg name="image" default="/camera/rgb/image_color" />
 
   <!-- Config and weights folder. -->
   <arg name="yolo_weights_path"          default="$(find darknet_ros)/yolo_network_config/weights"/>
@@ -31,8 +31,8 @@
   <node pkg="depth_yolo" type="depth_combination.py" name="depth_combination" />
 
   <!-- Static TF -->
-  <node pkg="tf" type="static_transform_publisher" name="camera_link_to_kinect2_optical_frame"
-    args="0 0 0 -1.57 0 -1.57 /camera_link /kinect2_ir_optical_frame 100" />
+  <!-- <node pkg="tf" type="static_transform_publisher" name="camera_link_to_kinect2_optical_frame"
+    args="0 0 0 -1.57 0 -1.57 /camera_link /camera_optical_frame 100" /> -->
 
    <!-- RVIZ -->
   <node pkg="rviz" type="rviz" name="rviz"
