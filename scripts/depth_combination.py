@@ -25,10 +25,10 @@ import numpy as np
 import math
 import tf
 
-height = 540
-width = 960
+height = 480
+width = 640
 if_pcl_ready = 0
-parent_frame = "kinect2_ir_optical_frame"
+parent_frame = "camera_depth_optical_frame"
 
 def darknet_callback(data):
     global p,if_pcl_ready
