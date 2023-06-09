@@ -26,7 +26,20 @@ sudo apt install ros-melodic-openni-*
 ```
 3. python-pcl (if you are using Ubuntu 20.04 with ROS noetic, pip install python3-pcl)
 ```bash
-pip install python-pcl
+pip install python-pcl 直接在NX或nano上pip会报错 所以需要下载源码编译
+```
+下载源码
+```bash
+git clone git@github.com:nypyp/python-pcl 这是为Ubuntu18更改setup.py的版本
+```
+确保numpy版本大于1.16.2，不然检查依赖过程中会自动下载高版本的numpy导致编译错误
+```bash
+python -m pip install upgrade numpy==1.16.6
+```
+编译
+```bash
+python setup.py build_ext -i
+python setup.py install #install 过程中可能会出现一些依赖下载失败报错 自己pip安装即可
 ```
 
 4. ros_numpy (if you are using Ubuntu 18.04 with ROS Melodic, sudo apt-get install ros-melodic-ros-numpy)
@@ -39,8 +52,10 @@ If you haven't cloned the dependencies packages yet, clone them in your workspac
 
 ```bash
 cd <your_ws>/src
-git clone --recursive https://github.com/nypyp/darknet_ros.git
+git clone --recursive https://github.com/nypyp/darknet_ros.git 
 ```
+记得使用--recursive 不然编译时可能会报未找到active_layer错误
+
 ## step3 install depth_yolo
 Then, you can continue installing depth_yolo
 ```bash
