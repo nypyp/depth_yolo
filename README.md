@@ -1,7 +1,9 @@
 
-[![ROS1 VERSION](https://img.shields.io/badge/ROS-ROS%201%20Noetic-brightgreen)](http://wiki.ros.org/noetic)
+[![ROS1 VERSION](https://img.shields.io/badge/ros-melodic-green)](http://wiki.ros.org/melotic)
 &nbsp;
-[![Ubuntu VERSION](https://img.shields.io/badge/Tested-Ubuntu%2020.04-green)](https://ubuntu.com/)
+[![Ubuntu VERSION](https://img.shields.io/badge/Ubuntu-18.04-yellowgreen)](https://ubuntu.com/)
+&nbsp;
+[![Jetson Xavier NX](https://img.shields.io/badge/Nvidia-Jetson%20Xavier%20NX-brightgreen)](https://www.nvidia.cn/autonomous-machines/embedded-systems/jetson-xavier-nx/)
 &nbsp;
 [![LICENSE](https://img.shields.io/badge/license-GPL%203-informational)](https://github.com/0nhc/depth_yolo/blob/master/LICENSE)
 &nbsp;
@@ -22,9 +24,9 @@ It will automatically send tf transforms between the objects detected and kinect
 ```bash
 sudo apt install ros-melodic-openni-*
 ```
-3. python3-pcl (if you are using Ubuntu 18.04 with ROS Melodic, pip install python-pcl)
+3. python-pcl (if you are using Ubuntu 20.04 with ROS noetic, pip install python3-pcl)
 ```bash
-pip install python3-pcl
+pip install python-pcl
 ```
 
 4. ros_numpy (if you are using Ubuntu 18.04 with ROS Melodic, sudo apt-get install ros-melodic-ros-numpy)
